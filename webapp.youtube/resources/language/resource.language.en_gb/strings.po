@@ -48,3 +48,19 @@ msgstr ""
 msgctxt "#30013"
 msgid "Custom user agent"
 msgstr ""
+
+msgctxt "#30020"
+msgid "Network"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Which uplink the app's connections leave through."
+msgstr ""
+
+msgctxt "#30022"
+msgid "Uplink source address"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Leave every connection of this app through a chosen uplink, by binding it to a local source address. Give an address, a subnet such as `192.168.5.0/24`, or an interface name; a subnet or an interface name is resolved each time, so it survives a new DHCP lease. The app does not open while nothing matches. Empty means the system default route."
+msgstr ""
