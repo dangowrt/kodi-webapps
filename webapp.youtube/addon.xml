@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.youtube" name="YouTube TV" version="0.1.0" provider-name="Daniel Golle">
+  <extension point="kodi.webapp" starturl="https://www.youtube.com/tv">
+    <useragent id="cobalt">Mozilla/5.0 (PS4; Leanback Shell) Cobalt/25.lts.40.1035033 (compatible; Kodi/22.0)</useragent>
+    <useragent id="tizen">Mozilla/5.0 (SMART-TV; LINUX; Tizen 8.0) AppleWebKit/537.36 (KHTML, like Gecko) 108.0.5359.1/8.0 TV Safari/537.36</useragent>
+    <useragent id="webos">Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 WebAppManager</useragent>
+    <userscript>profile/scripts/00-core.js</userscript>
+    <userscript>profile/scripts/10-identity.js</userscript>
+    <userscript>profile/scripts/20-adblock.js</userscript>
+    <userscript>profile/scripts/40-consent.js</userscript>
+    <contentfilter>profile/filters/youtube-ads.json</contentfilter>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The YouTube TV app inside Kodi</summary>
+    <description lang="en_GB">Opens the YouTube TV app in Kodi's web view with a configurable identity and without advertisement.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapp-youtube</source>
+  </extension>
+</addon>

@@ -1,0 +1,50 @@
+# Kodi Media Center language file
+# Addon Name: YouTube TV
+# Addon id: webapp.youtube
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30000"
+msgid "Identity"
+msgstr ""
+
+msgctxt "#30001"
+msgid "How the app sees the device it runs on."
+msgstr ""
+
+msgctxt "#30002"
+msgid "Present the app as"
+msgstr ""
+
+msgctxt "#30003"
+msgid "The device identity the app is given: the Leanback shell naming Kodi, a Samsung Tizen TV, an LG webOS TV, or a user agent of your own."
+msgstr ""
+
+msgctxt "#30004"
+msgid "Custom user agent"
+msgstr ""
+
+msgctxt "#30005"
+msgid "The user agent string sent when the identity is set to custom."
+msgstr ""
+
+msgctxt "#30010"
+msgid "Leanback shell, naming Kodi"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Samsung Tizen TV"
+msgstr ""
+
+msgctxt "#30012"
+msgid "LG webOS TV"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Custom user agent"
+msgstr ""

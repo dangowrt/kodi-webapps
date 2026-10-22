@@ -1,0 +1,92 @@
+[
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?doubleclick\\.net/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?googlesyndication\\.com/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?googleadservices\\.com/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?google-analytics\\.com/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?googletagmanager\\.com/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?googletagservices\\.com/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "popup", "ping", "other"],
+      "load-type": ["third-party"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?youtube\\.com/pagead/",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "ping", "other"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?youtube\\.com/api/stats/ads",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "ping", "other"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?youtube\\.com/ptracking",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "ping", "other"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?youtube\\.com/get_midroll_",
+      "resource-type": ["script", "image", "raw", "fetch", "media", "ping", "other"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?youtube\\.com/.*[?&]adformat=",
+      "resource-type": ["media", "raw", "fetch", "other"]
+    },
+    "action": { "type": "block" }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://([^/]+\\.)?ytimg\\.com/.*[?&]adformat=",
+      "resource-type": ["media", "raw", "fetch", "other"]
+    },
+    "action": { "type": "block" }
+  }
+]

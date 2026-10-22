@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings version="1">
+  <section id="webapp.youtube">
+    <category id="identity" label="30000" help="30001">
+      <group id="1">
+        <setting id="identity" type="string" label="30002" help="30003">
+          <level>0</level>
+          <default>cobalt</default>
+          <constraints>
+            <options>
+              <option label="30010">cobalt</option>
+              <option label="30011">tizen</option>
+              <option label="30012">webos</option>
+              <option label="30013">custom</option>
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+        <setting id="useragent" type="string" label="30004" help="30005">
+          <level>0</level>
+          <default></default>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="identity" operator="is">custom</condition>
+            </dependency>
+          </dependencies>
+          <control type="edit" format="string" />
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>
