@@ -11,9 +11,14 @@ add-on type) and a web client such as
 | `webapp.ardmediathek` | ARD Mediathek, HbbTV edition |
 | `webapp.arte` | ARTE, HbbTV edition, six languages |
 | `webapp.duckduckgo` | DuckDuckGo |
+| `webapp.francetv` | france.tv, big-screen edition |
+| `webapp.m6plus` | M6+, HbbTV edition |
+| `webapp.mitele` | Mitele, HbbTV edition |
 | `webapp.netflix` | Netflix |
+| `webapp.orfon` | ORF ON, HbbTV edition |
 | `webapp.primevideo` | Prime Video |
 | `webapp.raiplay` | RaiPlay, HbbTV edition |
+| `webapp.videoland` | Videoland, smart-TV edition |
 | `webapp.youtube` | YouTube TV |
 
 ## Installing
@@ -29,7 +34,8 @@ it with "Install from zip file".
 
 Each top-level directory with an `addon.xml` is one add-on. `common/` holds
 what several web apps share: the uplink setting every web app offers and
-the user script fitting a 1280x720 HbbTV page to the screen. Each of its
+the user scripts fitting a 1280x720 HbbTV page to the screen and handing
+it the key codes HbbTV receivers send. Each of its
 files is added to every web app that has no file of that name. An
 add-on's icon is a URL of the service's
 logo, which Kodi fetches; no logo is part of this repository.
