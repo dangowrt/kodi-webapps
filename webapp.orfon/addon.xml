@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.orfon" name="ORF ON" version="1.0.0" provider-name="Daniel Golle">
+  <requires>
+    <import addon="kodi.webapp" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="https://orfhbbtv.orf.at/orf/tvthek24/index.html?id=orfon&amp;ref=portal&amp;trackingconsent=false">
+    <useragent>Mozilla/5.0 (Linux; aarch64) AppleWebKit/605.1.15 (KHTML, like Gecko) WPE HbbTV/1.5.1 (; OpenWrt; Kodi; 22.0; ; Kodi;)</useragent>
+    <userscript>profile/scripts/00-hbbtv-scale.js</userscript>
+    <userscript>profile/scripts/00-hbbtv-keys.js</userscript>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The ORF ON TV edition inside Kodi</summary>
+    <description lang="en_GB">Opens the HbbTV edition of ORF ON, the streaming service of the Austrian broadcaster ORF, in Kodi's web view.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/ORF_On_Logo_2024.svg/960px-ORF_On_Logo_2024.svg.png</icon>
+    </assets>
+  </extension>
+</addon>
