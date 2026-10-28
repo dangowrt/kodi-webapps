@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.la7" name="La7" version="1.0.0" provider-name="Daniel Golle">
+  <requires>
+    <import addon="kodi.webapp" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="https://ht.la7.it/index.php">
+    <useragent>Mozilla/5.0 (Linux; aarch64) AppleWebKit/605.1.15 (KHTML, like Gecko) WPE HbbTV/1.5.1 (; OpenWrt; Kodi; 22.0; ; Kodi;)</useragent>
+    <userscript>profile/scripts/00-hbbtv-scale.js</userscript>
+    <userscript>profile/scripts/00-hbbtv-keys.js</userscript>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The La7 TV edition inside Kodi</summary>
+    <description lang="en_GB">Opens the HbbTV edition of La7, the Italian broadcaster of La7, La7 Cinema and TG La7, in Kodi's web view.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/LA7_-_Logo_2011.svg/960px-LA7_-_Logo_2011.svg.png</icon>
+    </assets>
+  </extension>
+</addon>
