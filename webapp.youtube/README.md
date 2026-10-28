@@ -1,4 +1,4 @@
-# kodi-webapp-youtube
+# webapp.youtube
 
 The YouTube TV app as a Kodi web app add-on (`webapp.youtube`). It needs
 Kodi's web app support and a web client such as
