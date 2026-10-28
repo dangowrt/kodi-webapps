@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.twitch" name="Twitch" version="1.0.0" provider-name="Daniel Golle">
+  <requires>
+    <import addon="kodi.webapp" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="https://lg.tv.twitch.tv/">
+    <useragent>Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 WebAppManager</useragent>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The Twitch TV app inside Kodi</summary>
+    <description lang="en_GB">Opens Twitch's app for TVs, as a webOS TV sees it, in Kodi's web view. Signing in uses Twitch's activation code.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/960px-Twitch_Glitch_Logo_Purple.svg.png</icon>
+    </assets>
+  </extension>
+</addon>
