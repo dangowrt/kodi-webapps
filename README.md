@@ -27,8 +27,10 @@ it with "Install from zip file".
 ## Layout
 
 Each top-level directory with an `addon.xml` is one add-on. `common/` holds
-the uplink setting every web app offers; it is added to each web app
-without settings of its own. An add-on's icon is a URL of the service's
+what several web apps share: the uplink setting every web app offers and
+the user script fitting a 1280x720 HbbTV page to the screen. Each of its
+files is added to every web app that has no file of that name. An
+add-on's icon is a URL of the service's
 logo, which Kodi fetches; no logo is part of this repository.
 
 `tools/build-repo.py <dir>` builds the repository: one zip per add-on with
