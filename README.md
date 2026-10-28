@@ -12,12 +12,14 @@ add-on type) and a web client such as
 | `webapp.arte` | ARTE, HbbTV edition, six languages |
 | `webapp.duckduckgo` | DuckDuckGo |
 | `webapp.francetv` | france.tv, big-screen edition |
+| `webapp.la7` | La7, HbbTV edition |
 | `webapp.m6plus` | M6+, HbbTV edition |
 | `webapp.mitele` | Mitele, HbbTV edition |
 | `webapp.netflix` | Netflix |
 | `webapp.orfon` | ORF ON, HbbTV edition |
 | `webapp.primevideo` | Prime Video |
 | `webapp.raiplay` | RaiPlay, HbbTV edition |
+| `webapp.twitch` | Twitch, TV edition |
 | `webapp.videoland` | Videoland, smart-TV edition |
 | `webapp.youtube` | YouTube TV |
 
