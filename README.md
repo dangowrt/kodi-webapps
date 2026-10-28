@@ -9,6 +9,7 @@ add-on type) and a web client such as
 | Add-on | Opens |
 | --- | --- |
 | `webapp.ardmediathek` | ARD Mediathek, HbbTV edition |
+| `webapp.arte` | ARTE, HbbTV edition, six languages |
 | `webapp.duckduckgo` | DuckDuckGo |
 | `webapp.netflix` | Netflix |
 | `webapp.primevideo` | Prime Video |

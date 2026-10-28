@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings version="1">
+  <section id="webapp.arte">
+    <category id="language" label="30000" help="30001">
+      <group id="1">
+        <setting id="starturl" type="string" label="30002" help="30003">
+          <level>0</level>
+          <default>de</default>
+          <constraints>
+            <options>
+              <option label="30010">de</option>
+              <option label="30011">fr</option>
+              <option label="30012">en</option>
+              <option label="30013">es</option>
+              <option label="30014">it</option>
+              <option label="30015">pl</option>
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+      </group>
+    </category>
+    <category id="network" label="30020" help="30021">
+      <group id="1">
+        <setting id="uplinkaddress" type="string" label="30022" help="30023">
+          <level>3</level>
+          <default></default>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="edit" format="string" />
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>

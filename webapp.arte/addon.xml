@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.arte" name="ARTE" version="1.0.0" provider-name="Daniel Golle">
+  <requires>
+    <import addon="kodi.webapp" version="1.1.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=de_DE">
+    <starturl id="de">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=de_DE</starturl>
+    <starturl id="fr">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=fr_FR</starturl>
+    <starturl id="en">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=en_GB</starturl>
+    <starturl id="es">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=es_ES</starturl>
+    <starturl id="it">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=it_IT</starturl>
+    <starturl id="pl">http://www.arte.tv/static/hbbtvv3/current/index.xhtml?pf=prod&amp;page=HOME&amp;lang=pl_PL</starturl>
+    <useragent>Mozilla/5.0 (Linux; aarch64) AppleWebKit/605.1.15 (KHTML, like Gecko) WPE HbbTV/1.5.1 (; OpenWrt; Kodi; 22.0; ; Kodi;)</useragent>
+    <userscript>profile/scripts/00-hbbtv-scale.js</userscript>
+    <userscript>profile/scripts/00-hbbtv-keys.js</userscript>
+    <userscript>profile/scripts/10-language.js</userscript>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">The ARTE TV edition inside Kodi</summary>
+    <description lang="en_GB">Opens the HbbTV edition of ARTE, the European culture channel, in Kodi's web view, in German, French, English, Spanish, Italian or Polish.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Arte_Logo_2026.svg/960px-Arte_Logo_2026.svg.png</icon>
+    </assets>
+  </extension>
+</addon>
