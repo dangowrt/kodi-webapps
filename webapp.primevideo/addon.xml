@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.primevideo" name="Prime Video" version="1.0.0" provider-name="Daniel Golle">
+  <requires>
+    <import addon="kodi.webapp" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="https://www.primevideo.com/">
+    <useragent>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36</useragent>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Prime Video inside Kodi</summary>
+    <description lang="en_GB">Opens Prime Video in Kodi's web view, as Chrome on Linux sees the desktop site.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Amazon_Prime_Video_logo_%282024%29.svg/960px-Amazon_Prime_Video_logo_%282024%29.svg.png</icon>
+    </assets>
+  </extension>
+</addon>
