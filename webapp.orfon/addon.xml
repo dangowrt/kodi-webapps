@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="webapp.orfon" name="ORF ON" version="1.0.1" provider-name="Daniel Golle">
+<addon id="webapp.orfon" name="ORF ON" version="1.0.2" provider-name="Daniel Golle">
   <requires>
     <import addon="kodi.webapp" version="1.0.0"/>
   </requires>
@@ -15,7 +15,7 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/dangowrt/kodi-webapps</source>
     <assets>
-      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/ORF_On_Logo_2024.svg/960px-ORF_On_Logo_2024.svg.png</icon>
+      <icon>https://on.orf.at/img/icons/touch-icon-512.png</icon>
     </assets>
   </extension>
 </addon>

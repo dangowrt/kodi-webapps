@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="webapp.mitele" name="Mitele" version="1.0.0" provider-name="Daniel Golle">
+<addon id="webapp.mitele" name="Mitele" version="1.0.1" provider-name="Daniel Golle">
   <requires>
     <import addon="kodi.webapp" version="1.0.0"/>
   </requires>
@@ -14,7 +14,7 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/dangowrt/kodi-webapps</source>
     <assets>
-      <icon>https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mitele_logo_%282016-2025%29.svg/960px-Mitele_logo_%282016-2025%29.svg.png</icon>
+      <icon>https://img-prod-api2.mediasetplay.mediaset.it/api/images/by/v5/esp/aHR0cHM6Ly9kYW0uY2xvdWQubWVkaWFzZXQubmV0L20vN2NjZGZhZTY1ZDVlMzE0Mi9vcmlnaW5hbC9hcHBsZS10b3VjaC1pY29uLnBuZw/-/512/512</icon>
     </assets>
   </extension>
 </addon>
