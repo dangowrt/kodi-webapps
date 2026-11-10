@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="webapp.module.hbbtv" name="HbbTV terminal for web apps" version="1.0.0" provider-name="Daniel Golle">
+<addon id="webapp.module.hbbtv" name="HbbTV terminal for web apps" version="1.1.0" provider-name="Daniel Golle">
   <requires>
     <import addon="kodi.webapp" version="1.3.0"/>
   </requires>
   <extension point="kodi.webapp.module"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">What HbbTV editions expect of a television, for web apps</summary>
-    <description lang="en_GB">User scripts that web apps opening the HbbTV edition of a broadcaster share: the key codes HbbTV receivers send, the OIPF A/V Control and video/broadcast objects, the application manager, whose destroyApplication() returns to Kodi, and the scaling of a 1280x720 page to the screen.</description>
+    <description lang="en_GB">User scripts that web apps opening the HbbTV edition of a broadcaster share: the key codes HbbTV receivers send, the OIPF A/V Control and video/broadcast objects, the capabilities object listing the media profiles the web view plays and Widevine where encrypted media is available, the application manager, whose destroyApplication() returns to Kodi, and the scaling of a 1280x720 page to the screen.</description>
     <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/dangowrt/kodi-webapps</source>

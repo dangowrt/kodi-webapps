@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // What an HbbTV terminal gives its applications and the web view lacks: the
 // receivers' key codes, the OIPF A/V Control object (played by a <video> next
-// to it, as WebKit renders no fallback content), the video/broadcast object
-// and the application manager, whose destroyApplication() returns to Kodi.
+// to it, as WebKit renders no fallback content), the video/broadcast object,
+// the capabilities object, listing the media profiles the web view plays and
+// Widevine where encrypted media is available, and the application manager,
+// whose destroyApplication() returns to Kodi.
 
 (function () {
     var VK = {
@@ -369,9 +371,17 @@
     };
     var APP_MANAGER = "application/oipfapplicationmanager";
     var BROADCAST = "video/broadcast";
+    var CAPABILITIES = "application/oipfcapabilities";
+    var CAPABILITIES_NS = "urn:hbbtv:config:oitf:oitfCapabilities:2017-1";
+    var WIDEVINE = "urn:dvb:casystemid:19156";
+    // OIPF Media V2.3 table 3: the MP4 system format with CENC protection
+    var WIDEVINE_FORMATS = "MP4_CENC";
+    // TS 101 154 5.6.1.2 and table L.1: the codecs the format labels stand for
+    var AVC_SD_25 = "avc1.4D401E", AVC_HD_25 = "avc1.640028",
+        HEAAC = "mp4a.40.5", EAC3 = "ec-3";
     var proto = HTMLObjectElement.prototype;
     var getAttr = Element.prototype.getAttribute;
-    var application;
+    var application, profiles;
 
     function typeOf(obj) {
         var type = getAttr.call(obj, "type");
@@ -428,6 +438,76 @@
         return list([]);
     }
 
+    function playable(type, codecs) {
+        return !!window.MediaSource && MediaSource.isTypeSupported(
+            type + (codecs.length ? '; codecs="' + codecs.join(",") + '"' : ""));
+    }
+
+    // widevine: the web view plays the profile protected by Widevine, through EME and MSE
+    function profileAdd(tag, name, type, transport, probe, codecs, widevine) {
+        if (!playable(probe, codecs))
+            return;
+        profiles.push({ tag: tag, name: name, type: type, transport: transport, widevine: widevine });
+    }
+
+    function avcProfilesAdd(video, audio, widevine) {
+        var name = video[0] + "_" + audio[0];
+        var codecs = [video[1], audio[1]];
+
+        profileAdd("video_profile", "MP4_" + name, "video/mp4", "dash", "video/mp4", codecs, widevine);
+        profileAdd("video_profile", "MP4_" + name + "_EBUTTD", "video/mp4", "dash", "video/mp4", codecs, widevine);
+        profileAdd("video_profile", "TS_" + name, "video/mpeg", "", "video/mp2t", codecs, false);
+        profileAdd("video_profile", "MP4_" + name, "video/mp4", "", "video/mp4", codecs, false);
+    }
+
+    function profilesGet() {
+        if (profiles)
+            return profiles;
+        profiles = [];
+        profileAdd("audio_profile", "MPEG1_L3", "audio/mpeg", "", "audio/mpeg", [], false);
+        profileAdd("audio_profile", "HEAAC", "audio/mp4", "", "audio/mp4", [HEAAC], false);
+        profileAdd("audio_profile", "MP4_HEAAC", "audio/mp4", "dash", "audio/mp4", [HEAAC], true);
+        profileAdd("audio_profile", "MP4_E-AC3", "audio/mp4", "", "audio/mp4", [EAC3], false);
+        profileAdd("audio_profile", "MP4_E-AC3", "audio/mp4", "dash", "audio/mp4", [EAC3], false);
+        [["AVC_SD_25", AVC_SD_25], ["AVC_HD_25", AVC_HD_25]].forEach(function (video) {
+            avcProfilesAdd(video, ["HEAAC", HEAAC], true);
+            avcProfilesAdd(video, ["E-AC3", EAC3], false);
+        });
+        return profiles;
+    }
+
+    function encryptedMediaAvailable() {
+        return typeof Navigator.prototype.requestMediaKeySystemAccess === "function";
+    }
+
+    function capabilities() {
+        var doc = document.implementation.createDocument(CAPABILITIES_NS, "profilelist", null);
+        var drm = encryptedMediaAvailable();
+        var el;
+
+        profilesGet().forEach(function (p) {
+            el = doc.createElementNS(CAPABILITIES_NS, p.tag);
+            el.setAttribute("name", p.name);
+            el.setAttribute("type", p.type);
+            if (p.transport)
+                el.setAttribute("transport", p.transport);
+            if (drm && p.widevine)
+                el.setAttribute("DRMSystemID", WIDEVINE);
+            doc.documentElement.appendChild(el);
+        });
+        if (drm) {
+            el = doc.createElementNS(CAPABILITIES_NS, "drm");
+            el.setAttribute("DRMSystemID", WIDEVINE);
+            el.textContent = WIDEVINE_FORMATS;
+            doc.documentElement.appendChild(el);
+        }
+        return doc;
+    }
+
+    function hasCapability(name) {
+        return String(name) === "+DRM" && encryptedMediaAvailable();
+    }
+
     // an earlier helper may own the name for other object types
     function method(type, name, fn) {
         var previous = Object.getOwnPropertyDescriptor(proto, name);
@@ -475,13 +555,22 @@
     method(BROADCAST, "getVolume", function () { return 100; });
     method(BROADCAST, "setVolume", function () { return true; });
 
+    getter(CAPABILITIES, "xmlCapabilities", capabilities);
+    method(CAPABILITIES, "hasCapability", hasCapability);
+
     if (!window.oipfObjectFactory) {
         window.oipfObjectFactory = {
             isObjectSupported: function (type) {
-                return [APP_MANAGER, BROADCAST].indexOf(String(type).toLowerCase()) >= 0;
+                return [APP_MANAGER, BROADCAST, CAPABILITIES].indexOf(String(type).toLowerCase()) >= 0;
             },
             createApplicationManagerObject: function () {
                 return { getOwnerApplication: owner, getChildApplications: children };
+            },
+            createCapabilitiesObject: function () {
+                return {
+                    get xmlCapabilities() { return capabilities(); },
+                    hasCapability: hasCapability
+                };
             }
         };
     }
