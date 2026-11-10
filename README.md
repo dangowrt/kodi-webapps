@@ -8,6 +8,7 @@ add-on type) and a web client such as
 
 | Add-on | Opens |
 | --- | --- |
+| `webapp.3satmediathek` | 3sat Mediathek, HbbTV edition |
 | `webapp.ardmediathek` | ARD Mediathek, HbbTV edition |
 | `webapp.arte` | ARTE, HbbTV edition, six languages |
 | `webapp.duckduckgo` | DuckDuckGo |
