@@ -26,6 +26,7 @@ add-on type) and a web client such as
 | `webapp.twitch` | Twitch, TV edition |
 | `webapp.videoland` | Videoland, smart-TV edition |
 | `webapp.youtube` | YouTube TV |
+| `webapp.zdfmediathek` | ZDFmediathek, HbbTV edition |
 
 ## Installing
 
