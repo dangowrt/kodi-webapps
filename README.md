@@ -13,6 +13,7 @@ add-on type) and a web client such as
 | `webapp.arte` | ARTE, HbbTV edition, six languages |
 | `webapp.duckduckgo` | DuckDuckGo |
 | `webapp.francetv` | france.tv, big-screen edition |
+| `webapp.hbomax` | HBO Max |
 | `webapp.la7` | La7, HbbTV edition |
 | `webapp.luci` | Local OpenWrt web interface, TV view |
 | `webapp.m6plus` | M6+, HbbTV edition |

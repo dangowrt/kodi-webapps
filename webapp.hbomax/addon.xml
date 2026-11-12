@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="webapp.hbomax" name="HBO Max" version="1.0.0" provider-name="Nick Hainke">
+  <requires>
+    <import addon="kodi.webapp" version="1.3.0"/>
+    <import addon="script.module.inputstreamhelper"/>
+    <import addon="webapp.module.consent" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.webapp" starturl="https://play.hbomax.com/">
+    <useragent>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36</useragent>
+    <userscript addon="webapp.module.consent">profile/scripts/onetrust.js</userscript>
+    <userscript>profile/scripts/10-remote.js</userscript>
+    <contentfilter list="easyprivacy"/>
+    <contentfilter>profile/filters/hbomax-trackers.txt</contentfilter>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">HBO Max inside Kodi</summary>
+    <description lang="en_GB">Opens HBO Max in Kodi's web view, as Chrome on Linux sees the desktop site. Plays where HBO Max is offered, with a subscription.</description>
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/dangowrt/kodi-webapps</source>
+    <assets>
+      <icon>https://beam-images.warnermediacdn.com/2025-07/Splash%20Screen%20HD%20720x480.jpg?host=wbd-dotcom-drupal-prd-us-east-1.s3.amazonaws.com</icon>
+    </assets>
+  </extension>
+</addon>

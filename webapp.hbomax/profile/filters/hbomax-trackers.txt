@@ -1,0 +1,9 @@
+! HBO Max's real user monitoring, error reporting, product analytics and
+! marketing messaging, which its site loads alongside the tag manager
+||go-mpulse.net^
+||sentry-cdn.com^
+||sentry.io^
+||amplitude.com^
+||rokt.com^
+||braze.com^
+||braze-images.com^
